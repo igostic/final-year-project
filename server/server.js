@@ -3,15 +3,13 @@ import app from './express'
 import mongoose from 'mongoose'
 
 // Connection URL
-mongoose.Promise = global.Promise
-mongoose.connect(config.mongoUri)
-mongoose.connection.on('error', () => {
-  throw new Error(`unable to connect to database: ${mongoUri}`)
-})
 
-app.listen(config.port, (err) => {
-  if (err) {
-    console.log(err)
-  }
-  console.info('Server started on port %s.', config.port)
-})
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://prakhar:<password>@cluster0.oubax.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
