@@ -18,4 +18,4 @@ client.connect(err => {
   client.close();
 });
 export default MongoClient
-export default config
+export config
