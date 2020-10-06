@@ -1,7 +1,4 @@
-# MERN Social
-
-//### [Live Demo](http://social.mernbook.com/ "MERN Social")
-
+# JIET Social
 #### What you need to run this code
 1. Node (8.11.1)
 2. NPM (5.8.0)
